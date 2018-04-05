@@ -1,7 +1,7 @@
 const fs = require('fs');
 const request = require('request');
 const cheerio = require('cheerio');
-const Product = require('../backend/models/products');
+const Product = require('./models').Products;
 
 // Categories
 const url_bottle_canned = "https://www.filstop.com/bottled-canned/?sort=bestseller&objects_per_page=48";
@@ -80,7 +80,6 @@ function generateModel(url, category, ) {
             )
     
             // Final products seed for the database
-            const allProducts = [];
             for (i = 0; i < $("script[type='application/ld+json']").length; i++) {
                 const products = {};
                 const item = JSON.parse($("script[type='application/ld+json']").get()[i].children[0].data);
@@ -88,21 +87,12 @@ function generateModel(url, category, ) {
                 products.image = item.image;
                 products.price = item.offers.price;
                 products.rating = 0;
-                products.stock = stock_arr[i];
+                ((stock_arr[i] === "") ? products.stock = 0 : products.stock = stock_arr[i]);
                 products.category = category;
                 products.weight = weight_arr[i];
                 products.sku = item.sku;
-                allProducts.push(products);
+                Product.create(products)
             };
-
-            // // Save json into files.
-            // fs.writeFile("./categories/"+category+".json", JSON.stringify(allProducts), (err) => {
-            //     if (err) {
-            //         console.error(err);
-            //         return;
-            //     };
-            //     console.log("File has been created");
-            // });
         } else {
             console.log("Error");
         }
