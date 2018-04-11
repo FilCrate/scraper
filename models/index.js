@@ -1,5 +1,5 @@
 const Sequelize = require('sequelize');
-const sequelize = new Sequelize('filcrate_dev', 'filcrate', 'password', {
+const sequelize = new Sequelize('filcrate_db', 'filcrate', 'password', {
     host: 'localhost',
     dialect: 'postgres',
     operatorsAliases: false,
