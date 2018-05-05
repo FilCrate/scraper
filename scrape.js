@@ -8,21 +8,9 @@ const url_bottle_canned = "https://www.filstop.com/bottled-canned/?sort=bestsell
 const bottle_canned = "Bottled/Canned"
 generateModel(url_bottle_canned, bottle_canned);
 
-const url_rice = "https://www.filstop.com/rice/?sort=bestseller&objects_per_page=48";
-const rice = "Rice";
-generateModel(url_rice, rice);
-
-const url_noodles = "https://www.filstop.com/noodles/?sort=bestseller&objects_per_page=48";
+const url_noodles = "https://www.filstop.com/filipino-instant-soup/?sort=bestseller&objects_per_page=48";
 const noodles = "Noodles";
 generateModel(url_noodles, noodles);
-
-const url_flavorings = "https://www.filstop.com/condiment-spreads/?sort=bestseller&objects_per_page=48";
-const flavorings = "Condiments";
-generateModel(url_flavorings, flavorings);
-
-const url_soup = "https://www.filstop.com/filipino-instant-soup/?sort=bestseller&objects_per_page=48";
-const soup = "Soup";
-generateModel(url_soup, soup);
 
 const url_snacks = "https://www.filstop.com/filipino-snacks/?sort=bestseller&objects_per_page=48";
 const snacks = "Snacks";
@@ -31,18 +19,6 @@ generateModel(url_snacks, snacks);
 const url_drinks = "https://www.filstop.com/drinks/?sort=bestseller&objects_per_page=48";
 const drinks = "Drinks";
 generateModel(url_drinks, drinks);
-
-const url_frozen = "https://www.filstop.com/filipino-frozen-goods/?sort=bestseller&objects_per_page=48";
-const frozen = "Frozen";
-generateModel(url_frozen, frozen);
-
-const url_health = "https://www.filstop.com/filipino-health-products/?sort=bestseller&objects_per_page=48";
-const health = "Health";
-generateModel(url_health, health);
-
-const url_misc = "https://www.filstop.com/miscellaneous/?sort=bestseller&objects_per_page=48";
-const misc = "Miscellaneous";
-generateModel(url_misc, misc);
 
 
 function generateModel (url, category) {
